@@ -5,11 +5,11 @@ app.config['DEBUG']= True
 
 tasks=[]
 
-@app.route('/todos', methods=['POST','get'])
+@app.route('/', methods=['POST','get'])
 def index():
     if request.method =='POST':
        task = request.form('task')
        tasks.append(task)
-    return render_template('todos.html',title ='ToDos',tasks=tasks)
+    return render_template('todos.html',title ='Get It Done',tasks=tasks)
 
 app.run()
